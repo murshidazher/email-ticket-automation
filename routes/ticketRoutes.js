@@ -1,24 +1,25 @@
 const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 
-const Blog = mongoose.model("Blog");
+const Ticket = mongoose.model("Ticket");
 
 module.exports = (app) => {
   app.get("/api/ping", async (req, res) => {
     res.send({ res: "pong" });
   });
 
-  app.get("/api/blogs/:id", async (req, res) => {
-    const blog = await Blog.findOne({
-      _user: req.user.id,
+  app.get("/api/tickets/:id", async (req, res) => {
+    const ticket = await Ticket.findOne({
+      // _user: req.user.id,
       _id: req.params.id,
     });
 
-    res.send(blog);
+    res.send(ticket);
   });
 
   app.get("/api/blogs", async (req, res) => {
-    const blogs = await Blog.find({ _user: req.user.id });
+    // { _user: req.user.id }
+    const blogs = await Ticket.find({});
 
     res.send(blogs);
   });
@@ -26,15 +27,15 @@ module.exports = (app) => {
   app.post("/api/blogs", requireLogin, async (req, res) => {
     const { title, content } = req.body;
 
-    const blog = new Blog({
+    const ticket = new Ticket({
       title,
       content,
-      _user: req.user.id,
+      // _user: req.user.id,
     });
 
     try {
-      await blog.save();
-      res.send(blog);
+      await ticket.save();
+      res.send(ticket);
     } catch (err) {
       res.send(400, err);
     }
