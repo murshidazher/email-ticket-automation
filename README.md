@@ -1,4 +1,4 @@
-# [email-ticket-automation](https://github.com/murshidazher/email-ticket-automation)
+# [email-ticket-automation](https://email-ticket-automation.herokuapp.com/api/tickets)
 
 > This is the repo for email trigger and automatic ticket creation :fire:
 
@@ -28,7 +28,7 @@
 
 ## How to
 
-- Send an email to `trigger@applet.ifttt.com` from the connected email and then make a web request to the endpoint and see if the record was added.
+- Send an email to `trigger@applet.ifttt.com` from the connected email and then make a web request to the endpoint and [see if the record was added](https://email-ticket-automation.herokuapp.com/api/tickets).
 
 ## Tools
 
