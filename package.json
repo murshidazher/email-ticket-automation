@@ -1,27 +1,42 @@
 {
-  "name": "server",
+  "name": "email-ticket-automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "> This is the repo for email trigger and automatic ticket creation",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js --ignore tests",
-    "dev": "concurrently \"npm run server\""
+    "dev": "npm run server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murshidazher/email-ticket-automation.git"
+  },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/murshidazher/email-ticket-automation#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
   "dependencies": {
-    "aws-sdk": "^2.188.0",
-    "body-parser": "^1.17.2",
-    "concurrently": "^3.5.0",
-    "cookie-session": "^2.0.0-beta.2",
-    "express": "^4.15.3",
-    "migrate-mongoose": "^3.2.2",
-    "mongoose": "^4.11.1",
-    "nodemon": "^1.11.0",
-    "passport": "^0.3.2",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "ejs": "^3.1.5",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
+    "migrate-mongoose": "^4.0.0",
+    "mongoose": "^5.11.12",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0",
-    "path-parser": "^2.0.2",
-    "uuid": "^3.2.1"
+    "path-parser": "^6.1.0",
+    "uuid": "^8.3.2"
   }
 }

@@ -9,8 +9,16 @@ require("./models/User");
 require("./models/Ticket");
 require("./services/passport");
 
-mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, { useMongoClient: true });
+// database connection
+mongoose.set("useCreateIndex", true);
+mongoose
+  .connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(
+    () => {
+      console.log("Connected to DB");
+    },
+    (err) => console.log(err)
+  );
 
 const app = express();
 
