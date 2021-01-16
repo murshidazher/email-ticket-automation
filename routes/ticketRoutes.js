@@ -19,12 +19,12 @@ module.exports = (app) => {
 
   app.get("/api/tickets", async (req, res) => {
     // { _user: req.user.id }
-    const tickets = await Ticket.find({});
+    const tickets = await Ticket.find();
 
     res.send(tickets);
   });
 
-  app.post("/api/tickets", requireLogin, async (req, res) => {
+  app.post("/api/tickets", async (req, res) => {
     const { title, content } = req.body;
 
     const ticket = new Ticket({
