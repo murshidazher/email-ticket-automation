@@ -17,14 +17,14 @@ module.exports = (app) => {
     res.send(ticket);
   });
 
-  app.get("/api/blogs", async (req, res) => {
+  app.get("/api/tickets", async (req, res) => {
     // { _user: req.user.id }
-    const blogs = await Ticket.find({});
+    const tickets = await Ticket.find({});
 
-    res.send(blogs);
+    res.send(tickets);
   });
 
-  app.post("/api/blogs", requireLogin, async (req, res) => {
+  app.post("/api/tickets", requireLogin, async (req, res) => {
     const { title, content } = req.body;
 
     const ticket = new Ticket({
